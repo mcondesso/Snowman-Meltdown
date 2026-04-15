@@ -61,12 +61,12 @@ def play_game():
     print("Welcome to Snowman Meltdown!")
 
     mistakes = 0
-    guessed_letters = []
+    guessed_letters = set()
     while mistakes < len(STAGES) - 1:
         display_game_state(mistakes, secret_word, guessed_letters)
 
         guess = input("Guess a letter: ").lower()
-        guessed_letters.append(guess)
+        guessed_letters.add(guess)
         if guess not in secret_word:
             mistakes += 1
 
