@@ -1,9 +1,9 @@
 import random
 from stages import STAGES
 
-
 # List of secret words
 WORDS = ["python", "git", "github", "snowman", "meltdown"]
+
 
 def get_random_word():
     """Selects a random word from the list."""
