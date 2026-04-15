@@ -30,6 +30,10 @@ def is_word_guessed(secret_word, guessed_letters):
     return True
 
 
+def is_guess_valid(guess):
+    return len(guess) == 1 and guess.isalpha()
+
+
 def display_game_over(secret_word):
     print("\nGame Over! The word was: ", secret_word)
     print(STAGES[-1])
@@ -49,6 +53,10 @@ def play_game():
         display_game_state(mistakes, secret_word, guessed_letters)
 
         guess = input("Guess a letter: ").lower()
+        if not is_guess_valid(guess):
+            print("Invalid guess! Please enter a single letter or number.")
+            continue
+
         guessed_letters.add(guess)
         if guess not in secret_word:
             mistakes += 1
