@@ -51,9 +51,20 @@ def display_game_state(mistakes, secret_word, guessed_letters):
         print(text.rstrip(), "\n")
 
 
+def is_word_guessed(secret_word, guessed_letters):
+    for l in secret_word:
+        if l not in guessed_letters:
+            return False
+    return True
+
+
 def display_game_over(secret_word):
     print("\nGame Over! The word was: ", secret_word)
     print(STAGES[-1])
+
+
+def display_game_won():
+    print("\nCongratulations, you saved the snowman!")
 
 
 def play_game():
@@ -69,9 +80,14 @@ def play_game():
         guessed_letters.add(guess)
         if guess not in secret_word:
             mistakes += 1
+        else:
+            if is_word_guessed(secret_word, guessed_letters):
+                break
 
     if mistakes == len(STAGES) - 1:
         display_game_over(secret_word)
+    else:
+        display_game_won()
 
     
 if __name__ == "__main__":
