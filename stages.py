@@ -1,4 +1,10 @@
-# Snowman ASCII Art stages
+"""
+Snowman ASCII art stages for the Snowman Meltdown game.
+
+Each string in the STAGES list represents a visual state of the snowman,
+from fully intact (stage 0) to completely melted (last stage).
+"""
+
 STAGES = [
     # Stage 0: Full snowman
     """
