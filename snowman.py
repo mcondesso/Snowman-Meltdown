@@ -52,7 +52,7 @@ def display_game_state(mistakes, secret_word, guessed_letters):
 
 
 def display_game_over(secret_word):
-    print("Game Over! The word was: ", secret_word)
+    print("\nGame Over! The word was: ", secret_word)
     print(STAGES[-1])
 
 
